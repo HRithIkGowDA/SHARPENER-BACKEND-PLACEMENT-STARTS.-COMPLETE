@@ -1,0 +1,102 @@
+SQL-S3-SOLUTIONS
+
+
+
+
+
+
+﻿1)What are joins ? Explain the different types of joins and their uses?
+
+
+
+Joins in SQL are used to combine records from two or more tables into a single result set based on a related column between the tables. There are several types of joins:
+
+
+
+
+
+Inner Join: returns only matching rows from both tables.
+Left Join or Left Outer Join: returns all rows from the left table and the matching rows from the right table, with NULL values for non-matching rows in the right table.
+Right Join or Right Outer Join: returns all rows from the right table and the matching rows from the left table, with NULL values for non-matching rows in the left table.
+Full Outer Join: returns all rows from both tables, with NULL values for non-matching rows in either table.
+
+
+2) Write an SQL query to demonstrate joins ?
+
+
+
+An example of a join in SQL is the INNER JOIN. It returns only the rows where there is a match in both tables. The syntax for an inner join is:
+
+SELECT columns
+FROM table1
+INNER JOIN table2
+ON table1.column = table2.column;
+
+
+
+
+3) What are constraints in SQL? Explain 5 of them.
+
+
+
+Constraints in SQL are rules that enforce data integrity in a database. Five commonly used constraints are: NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK.
+
+
+
+NOT NULL Constraint: A NOT NULL constraint ensures that a column cannot have a NULL value. It is used to enforce a column to have a non-null value, which means the column must have a value when a new record is inserted into the table.
+UNIQUE Constraint: A UNIQUE constraint ensures that all values in a column are unique. It means no two records in a table can have the same value for a UNIQUE column.
+PRIMARY KEY Constraint: A PRIMARY KEY constraint is a combination of a NOT NULL and UNIQUE constraint. It uniquely identifies each record in a table and acts as a reference for foreign key constraints in other tables.
+FOREIGN KEY Constraint: A FOREIGN KEY constraint is used to enforce referential integrity, which means that the values in a column must match the values in another table's primary key column. This ensures that data is consistent and prevents invalid data from being entered into the database.
+CHECK Constraint: A CHECK constraint allows you to specify a condition that must be met before data can be inserted or updated in a table. If the condition is not met, the data is not inserted or updated, and an error message is returned. It is used to enforce business rules on data in a table.
+
+
+
+
+4) What is UNIQUE constraint?
+
+
+
+UNIQUE constraint is used to enforce the uniqueness of values in a column. It ensures that no two rows have the same value in a specified column.
+
+
+
+
+
+5) What are primary keys and foreign keys.When to use what ? Explain with an example.
+
+
+
+Primary keys are used to uniquely identify each record in a table, whereas foreign keys are used to establish a relationship between two tables. 
+
+Primary keys are used as the main reference in a table, while foreign keys are used to link the data of two tables.
+
+
+
+CREATE TABLE employees (
+
+  employee_id INT PRIMARY KEY,
+
+  first_name VARCHAR(50) NOT NULL,
+
+  last_name VARCHAR(50) NOT NULL,
+
+  department_id INT,
+
+  FOREIGN KEY (department_id) REFERENCES departments(department_id)
+
+);
+
+
+
+ In the above example, the "department_id" column in the "employees" table is a foreign key that refers to the "department_id" column in the "departments" table, which is the primary key. 
+
+
+
+6) What is the difference betwen primary key and unique key?
+
+
+
+The main difference between primary key and unique key is that a primary key cannot have a null value and cannot be duplicated, while a unique key can have a null value, but cannot be duplicated.
+
+
+

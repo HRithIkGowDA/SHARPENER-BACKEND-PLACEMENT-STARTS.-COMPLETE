@@ -1,0 +1,75 @@
+SQL-S5-SOLUTIONS
+
+
+
+
+1) What is a view ? (Commonly asked)
+
+
+
+A view in SQL is a virtual table that represents data from one or more tables in a database. It is used to simplify complex queries by breaking them into smaller, simpler ones, making them easier to understand and maintain.
+
+
+
+2) Why do we even need Views?
+
+
+
+Views are useful for security and performance reasons. They can be used to restrict access to specific columns of a table, allowing only certain data to be seen. They also can help optimize queries by pre-calculating and storing the result set, reducing the need to repeatedly perform the same complex calculations.
+
+
+
+
+
+3 What is normalisation of database?
+
+
+
+Normalization is the process of organizing data in a database to reduce data redundancy and improve data integrity. It involves dividing a database into two or more tables, and defining relationships between the tables.
+
+
+
+
+
+4,5) What are Delete, Truncate and DROP keywords? How are they different from each other?
+
+
+
+
+
+The DELETE keyword is used to delete rows from a table, while TRUNCATE is used to remove all data from a table, but not the table itself. The DROP keyword is used to remove an entire table, including all its data, as well as any related objects such as constraints, indexes, columns, defaults, views, and stored procedures.
+
+
+
+6) What is Indexing? What is the advantage of indexing and what is the disadvantage?
+
+
+
+Indexing in SQL is a way to improve the performance of queries by creating an index on specific columns in a table. This allows the database to quickly search for the data it needs by searching the index rather than the entire table. The advantage of indexing is improved query performance. The disadvantage is that it requires extra disk space and can slow down data insertion, update, and deletion operations.
+
+
+
+
+
+7) How to create an index in SQL? Please write the query . 
+
+
+
+To create an index in SQL, use the following syntax:
+
+CREATE INDEX index_name ON table_name (column1, column2, ...);
+
+
+
+For example, to create an index on the "last_name" column of the "employees" table:
+
+CREATE INDEX idx_employee_last_name ON employees (last_name);
+
+
+
+8) If we drop a table, does it also drop related objects like constraints, indexes, columns, default, views and sorted procedures?
+
+
+
+When a table is dropped, any related objects such as constraints, indexes, columns, defaults, views, and stored procedures are also dropped.
+

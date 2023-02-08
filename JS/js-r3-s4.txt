@@ -1,0 +1,236 @@
+Javascript Round 3 - SET 4-Solutions
+
+
+
+
+
+
+1)Explain the different ways of creating object in javascript? Explain all the 3 ways.
+
+
+
+There are three ways to create objects in JavaScript: object literals, object constructor, and object.create().
+
+Object Literals: This is the simplest and most common way to create an object in JavaScript. An object literal is a set of comma-separated name-value pairs surrounded by curly braces.
+
+
+const person = {
+
+ firstName: "John",
+
+ lastName: "Doe",
+
+ age: 30
+
+};
+
+
+
+
+
+Object Constructor: This method is used to create objects using a constructor function. The constructor function is defined using the new keyword.
+
+
+function Person(firstName, lastName, age) {
+
+ this.firstName = firstName;
+
+ this.lastName = lastName;
+
+ this.age = age;
+
+}
+
+const person = new Person("John", "Doe", 30);
+
+
+
+
+
+Object.create(): This method creates an object that has a specified prototype.
+
+
+const personPrototype = {
+
+ sayHello: function() {
+
+  console.log(`Hello, my name is ${this.firstName} ${this.lastName}`);
+
+ }
+
+};
+
+const person = Object.create(personPrototype, {
+
+ firstName: { value: "John" },
+
+ lastName: { value: "Doe" },
+
+ age: { value: 30 }
+
+});
+
+
+
+
+
+
+
+2)What are Object Prototype Methods?
+
+
+
+Object Prototype Methods are methods that are attached to the prototype of an object. They are shared among all instances of the object and can be used to add methods and properties to an object.
+
+
+
+Object.prototype.toString = function() {
+
+ return `[object ${this.constructor.name}]`;
+
+};
+
+
+
+const obj = {};
+
+console.log(obj.toString()); // [object Object]
+
+
+
+
+
+
+
+3)What is object chaining in javascript? Can you create functions to explain object chaining better?
+
+
+
+
+
+Object chaining is a technique in JavaScript where you can call multiple methods on an object in a single statement. This allows you to perform several operations on an object in a concise and readable manner.
+
+
+
+const person = {
+
+ firstName: "John",
+
+ lastName: "Doe",
+
+ fullName: function() {
+
+  return `${this.firstName} ${this.lastName}`;
+
+ },
+
+ greet: function() {
+
+  console.log(`Hello, my name is ${this.fullName()}`);
+
+ }
+
+};
+
+
+
+person.greet();
+
+
+
+
+
+
+
+4)What is the main difference between fat arrow function and normal function?
+
+
+
+The main difference between a fat arrow function and a normal function is the way this is bound. In a normal function, this is bound to the object that calls the function. In a fat arrow function, this is bound to the context in which the function is defined. Fat arrow functions are often used to maintain the value of this when passing a function as a callback.
+
+
+
+
+
+
+
+5)Can you give an example to explain how "this" works differenetly with fat arrow function and normal function?
+
+
+
+"this" keyword in normal functions refers to the object that it is attached to. In case of arrow functions, "this" is lexically scoped and refers to the value of the surrounding scope's "this".
+
+
+
+const person = {
+
+ firstName: "John",
+
+ lastName: "Doe",
+
+ fullName: function() {
+
+  return `${this.firstName} ${this.lastName}`;
+
+ };
+
+
+
+
+
+6)What are the advantages of Axios vs other competitors( like fetch, http, got etc)? Why is axios so widely used?
+
+
+
+Axios is popular because it is a Promise-based HTTP client library that works in the browser and node.js. It has some advantages over other competitors like ease of use, automatic transform of data to JSON, support for cancelling requests, and a wide range of browser compatibility.
+
+
+
+
+
+7)What are closures? Explain with an example? (Favourite interview question)
+
+
+
+Closures are inner functions that have access to variables in the outer (enclosing) function's scope. This means that the inner function can retain access to its scope even after the outer function has returned. 
+
+
+
+function outerFunction(x) {
+
+ return function innerFunction(y) {
+
+  return x + y;
+
+ };
+
+}
+
+
+
+const addWithX = outerFunction(10);
+
+console.log(addWithX(5)); // 15
+
+
+
+
+
+8)What is the output of this console.log(0.1 + 0.2). Why is it not 0.3?[Famous Interview question]- Watch this video to know.
+
+
+
+The output of console.log(0.1 + 0.2) will be 0.30000000000000004. This is because of the way floating point numbers are represented in binary, which can lead to rounding errors.
+
+
+
+
+
+9)What will be the output of this console.log((0.2+ 0.3) === 0.5)
+
+
+
+The output of console.log((0.2 + 0.3) === 0.5) will be false. This is because floating point arithmetic is not always precise, and the result of the expression 0.2 + 0.3 may not exactly equal to 0.5.
+
+
+

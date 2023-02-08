@@ -1,0 +1,59 @@
+Practice-S2-Solutions
+
+
+1)What is BLOB and TEXT in MySQL?
+
+
+
+BLOB stands for "Binary Large Object" and is used to store binary data such as images, audio, or video.
+
+
+
+ TEXT is used to store character data of a larger size, typically up to 65,535 characters.
+
+
+
+
+
+2) How do you return a hundred books starting from 105th? Write the query. Make required assumptions.
+
+
+
+SELECT * FROM books LIMIT 100 OFFSET 104;
+
+
+
+3) How would you select all the users, whose email id and phone number is NULL?
+
+
+
+SELECT * FROM users WHERE email IS NULL AND phone IS NULL;
+
+
+
+4) Write an SQL query to fetch five max salaries from a table.
+
+
+
+SELECT salary FROM employees ORDER BY salary DESC LIMIT 5;
+
+
+
+5) How do you get the  second last id without the max function?
+
+
+
+SELECT id FROM employees ORDER BY id DESC LIMIT 2 OFFSET 1;
+
+
+
+6) Write a query to find out the data between the age range of 25 to 35 from employee table?
+
+
+
+SELECT * FROM employees WHERE age BETWEEN 25 AND 35;
+
+
+
+
+

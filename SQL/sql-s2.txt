@@ -1,0 +1,50 @@
+SQL-S2-SOLUTIONS
+
+
+
+
+1)What are joins ? Explain the different types of joins and their uses?
+
+
+
+Joins in SQL are used to combine records from two or more tables into a single result set based on a related column between the tables. There are several types of joins:
+
+﻿
+
+Inner Join: returns only matching rows from both tables.
+Left Join or Left Outer Join: returns all rows from the left table and the matching rows from the right table, with NULL values for non-matching rows in the right table.
+Right Join or Right Outer Join: returns all rows from the right table and the matching rows from the left table, with NULL values for non-matching rows in the left table.
+Full Outer Join: returns all rows from both tables, with NULL values for non-matching rows in either table.
+
+
+
+
+2) What are MySQL Triggers? Watch this video 
+
+
+
+MySQL Triggers are a database object that are automatically executed or fired in response to specific changes to the data within a table, such as INSERT, UPDATE, or DELETE operations.
+
+
+
+3) What is Sharding in SQL? Go through this video 
+
+
+
+Sharding in SQL refers to the process of horizontal partitioning of data across multiple database servers, where each partition is referred to as a shard. This helps to distribute the load of a large database across multiple servers, improving performance and scalability.
+
+
+
+4) What is BLOB in general ? First watch this video 
+
+
+
+A binary large object is a collection of binary data stored as a single entity. Blobs are typically images, audio or other multimedia objects, though sometimes binary executable code is stored as a blob
+
+
+
+5) What is BLOB in MySQL? Watch this video 
+
+
+
+BLOB in MySQL stands for Binary Large Object and is used to store binary data such as images, audio, and video files. This data type can store large amounts of data up to a maximum of 4GB in size.

@@ -1,0 +1,53 @@
+Javascript Round 1 - SET 2-Solutions
+
+
+
+
+1) what is process.nextTick ?
+
+
+
+process.nextTick is a method in Node.js that adds a callback function to the next iteration of the event loop. It is often used to defer non-blocking operations and to give priority to more urgent tasks.
+
+
+
+
+
+2) how can you check if a variable is an array?
+
+
+
+You can check if a variable is an array in JavaScript by using the Array.isArray() method.
+
+
+
+let arr = [1, 2, 3];
+
+console.log(Array.isArray(arr)); // true
+
+
+
+
+
+3) Do You know Sql ? What is difference between truncate and delete?
+
+
+
+Yes, I know SQL. The difference between TRUNCATE and DELETE in SQL is that TRUNCATE is used to delete all the data in a table and reset the auto-increment counter, while DELETE is used to delete specific rows from a table. TRUNCATE is faster and more efficient than DELETE because it only needs to deallocate data pages and does not require logging the deletion of each row.
+
+
+
+
+
+
+
+4) Do you have any about indexing the table ?
+
+
+
+Indexing is a way to optimize the performance of a database by creating an index for the data in a table. An index is a data structure that allows quick search and retrieval of rows in a table. Indexes are stored separately from the actual data, and the database software uses them to quickly locate the rows that match a search criteria. In SQL, you can create an index on a table using the CREATE INDEX statement.
+
+
+
+
+

@@ -1,0 +1,85 @@
+SQL-S6-SOLUTIONS
+
+
+
+
+1) What is the difference between IN and BETWEERN Operator?
+
+
+
+The IN operator is used to filter data within a specific set of values, while the BETWEEN operator is used to filter data within a range of values. 
+
+For example: 
+
+SELECT * FROM employees WHERE salary IN (5000, 6000, 7000) and 
+
+SELECT * FROM employees WHERE salary BETWEEN 5000 AND 7000.
+
+
+
+
+
+2 How to write an SQL query to find students' names start with 'A'?
+
+
+
+SELECT name FROM students WHERE name LIKE 'A%';
+
+
+
+3) Write the SQL query to get the third maximum salary of an employee from a table named employees.You have to use OFFSET as other algos are not optimised. (Assume whatever you want to) - [Commonly asked Interview Question]
+
+
+
+The query would be: SELECT salary FROM employees ORDER BY salary DESC LIMIT 1 OFFSET 2;
+
+
+
+The ORDER BY salary DESC clause sorts the salary of employees in descending order, so the maximum salary will appear first.
+The LIMIT 1 OFFSET 2 clause is used to retrieve only the third highest salary. The LIMIT clause sets the maximum number of rows to be returned, and the OFFSET clause specifies the number of rows to skip before starting to return rows. So in this case, LIMIT 1 means we want to retrieve only one row, and OFFSET 2 means we want to skip the first two rows.
+
+
+
+
+4) What is the ACID property in a database? Explain each one of them .
+
+
+
+The ACID (Atomicity, Consistency, Isolation, Durability) property in a database refers to a set of properties that guarantee that database transactions are processed reliably. 
+
+Atomicity ensures that a transaction is either completed in its entirety or not at all.
+Consistency ensures that a transaction brings the database from one valid state to another.
+ Isolation ensures that concurrent transactions do not interfere with each other. 
+Durability ensures that once a transaction has been committed, its effects persist, even in the event of system failure.
+
+
+5) What is a deadlock in SQL?
+
+
+
+A deadlock in SQL occurs when two or more transactions are blocked, waiting for each other to release locks on resources they need to complete.
+
+
+
+6) Is a blank space or zero the same as a NULL value?
+
+
+
+No, a blank space and zero are not the same as a NULL value in SQL. NULL represents the absence of a value, while a blank space and zero are actual values.
+
+
+
+7) What is the usage of the NVL() function?
+
+
+
+The NVL() function in SQL is used to replace NULL values with a default value. For example: SELECT NVL(NULL, 'Unknown') FROM dual;
+
+
+
+8) What is SQL Injection?
+
+
+
+SQL Injection is a security vulnerability that occurs when user input is inserted into an SQL query without proper validation, allowing an attacker to execute arbitrary SQL code on the database. It can be prevented by using prepared statements, parameterized queries, or stored procedures.
+

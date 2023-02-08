@@ -1,0 +1,57 @@
+SQL-S1-SOLUTIONS
+
+
+
+
+1)What is Sequelize and why it is used
+
+
+
+Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It is used to simplify database operations in applications by allowing developers to interact with the database using an object-oriented syntax, rather than writing raw SQL.
+
+
+
+
+
+2)Why you are using MySql and why not NoSQL in the project?
+
+
+
+The choice between MySQL and NoSQL depends on the requirements of the specific project.
+
+ MySQL is a popular choice for applications that require a relational database, where data is stored in tables and relationships between the data can be established using foreign keys. 
+
+
+
+NoSQL databases, on the other hand, are better suited for projects where scalability and flexibility are more important than strict relational structure.
+
+
+
+3)What are views in MqSql?
+
+
+
+Views in MySQL are virtual tables based on the result of a SELECT statement. They allow developers to simplify queries and provide a layer of abstraction to the underlying data, making it easier to manage changes to the schema without affecting the rest of the application.
+
+
+
+
+
+4)How to connect sequelize to database?
+
+
+
+To connect Sequelize to a database, you first need to install the appropriate adapter for the database you are using, then specify the connection details (such as the host, port, username, password, and database name) in the sequelize constructor
+
+
+
+const Sequelize = require('sequelize');
+
+const sequelize = new Sequelize('database_name', 'user', 'password', {
+
+ host: 'localhost',
+
+ dialect: 'mysql'
+
+});
+

@@ -1,0 +1,273 @@
+Javascript Round 3 - SET 5-Solutions
+
+
+
+
+1)How to iterate inside and object and print all the values inside it without the keys? Give a code example?
+
+
+
+const obj = {
+
+ name: "John",
+
+ age: 30,
+
+ city: "New York"
+
+};
+
+
+
+for (const value of Object.values(obj)) {
+
+ console.log(value);
+
+}
+
+
+
+2) What is NaN property in JavaScript?
+
+
+
+The NaN property in JavaScript represents "Not-a-Number" value. It is a special value that represents an undefined or unrepresentable value. It is usually produced by an operation that has failed to produce a valid number, such as dividing 0 by 0 or dividing infinity by infinity.
+
+
+
+
+
+3) Explain pass by value and pass by reference? Give code example of how you would pass by reference in javascript?
+
+
+
+when a primitive value (such as a number, string, or boolean) is passed as an argument to a function, it is passed by value, meaning that a copy of the value is created and passed to the function. 
+
+
+
+On the other hand, when an object (such as an array or an object literal) is passed as an argument to a function, it is passed by reference, meaning that a reference to the object is passed to the function, rather than a copy.
+
+
+
+let obj = { name: "John" };
+
+
+
+function changeName(obj) {
+
+ obj.name = "Jane";
+
+}
+
+
+
+changeName(obj);
+
+console.log(obj.name); // Jane
+
+
+
+
+
+4) Explain “this” keyword?
+
+
+
+The this keyword in JavaScript refers to the object that the function is a method of. Its value depends on how the function is called. If a function is called as a method of an object, this refers to the object.
+
+
+
+5) What is memoization in javascript? Can you give a code example implementing the same?
+
+
+
+Memoization is a technique in JavaScript where you cache the results of expensive function calls and return the cached results when the same inputs occur again. This way, you avoid redundant computation and improve performance.
+
+
+
+function memoize(fn) {
+
+  const cache = {};
+
+  return function(...args) {
+
+    if (cache[args]) {
+
+      return cache[args];
+
+    }
+
+    const result = fn.apply(this, args);
+
+    cache[args] = result;
+
+    return result;
+
+  };
+
+}
+
+const add = memoize((a, b) => a + b);
+
+console.log(add(1, 2)); // 3
+
+console.log(add(1, 2)); // 3 (from cache)
+
+
+
+6) What is the data type of variables in JavaScript?
+
+
+
+In JavaScript, variables have a dynamic data type. This means the data type of a variable can change at runtime. For example: 
+
+
+
+let x = 10;
+
+console.log(typeof x); // number
+
+x = "Hello";
+
+console.log(typeof x); // string
+
+
+
+7) What are escape characters? Why are they used? Give code example.
+
+
+
+Escape characters are used to include special characters within a string. They are represented using a backslash (`\`). For example:
+
+
+
+const str = "Line1\nLine2"; // newline character
+
+console.log(str); 
+
+// Output: 
+
+// Line1
+
+// Line2
+
+
+
+8) What is break and continue statements? How are they different?
+
+
+
+`break` and `continue` statements are used to control the flow of loops in JavaScript. The `break` statement is used to exit a loop early, while the `continue` statement is used to skip the current iteration of a loop and move on to the next one. For example: 
+
+
+
+const numbers = [1, 2, 3, 4, 5];
+
+for (let i = 0; i < numbers.length; i++) {
+
+  if (numbers[i] === 3) {
+
+    break;
+
+  }
+
+  console.log(numbers[i]);
+
+}
+
+// Output: 
+
+// 1
+
+// 2
+
+
+
+for (let i = 0; i < numbers.length; i++) {
+
+  if (numbers[i] === 3) {
+
+    continue;
+
+  }
+
+  console.log(numbers[i]);
+
+}
+
+// Output: 
+
+// 1
+
+// 2
+
+// 4
+
+// 5
+
+
+
+9) What is the typeof an array in javascript?
+
+
+
+The type of an array in JavaScript is "object"
+
+
+
+10) What are anonymous functions in js? Give an example?
+
+
+
+Anonymous functions in JavaScript are functions without a name. They are created and executed in the same line
+
+
+
+(function() { console.log("This is an anonymous function")})()
+
+
+
+
+
+11) What's the difference between event.preventDefault() and event.stopPropagation() methods in JavaScript?
+
+
+
+event.preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event won't occur. 
+
+
+
+event.stopPropagation() method stops the bubbling of an event to parent elements, preventing any parent handlers from being notified of the event.
+
+
+
+
+
+12) What are higher order function ? Explain with code example. Watch this video to understand better
+
+
+
+Higher order functions are functions that accept other functions as arguments or return a function as its result. They are useful for abstracting and reusing code.
+
+
+
+function greet(greeting) {
+
+ return function(name) {
+
+  console.log(`${greeting}, ${name}!`)
+
+ }
+
+}
+
+
+
+const hello = greet("Hello");
+
+hello("John"); // Output: Hello, John!
+
+
+
+
+

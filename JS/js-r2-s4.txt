@@ -1,0 +1,179 @@
+Javascript Round 2 - SET 4-Solutions
+
+
+
+
+1)  Difference between ‘==’ and’ ===’ ?
+
+The double equal sign (==) operator in programming is used for comparison of values after type coercion. This means that it will try to convert the data types of the operands to a common type, before making the comparison.
+
+
+
+1 == "1" // true, after type coercion both become equal
+
+
+
+On the other hand, the triple equal sign (===) operator is used for strict comparison of values, without type coercion. This means that it will only return true if the operands have the same value and the same type.
+
+
+
+1 === "1" // false, data types are different (number and string)
+
+
+
+
+
+2)  Spread and rest operators
+
+
+
+The spread operator allows you to spread elements of an array or the properties of an object into a new array or object
+
+
+
+
+
+The rest operator is used to represent an indefinite number of arguments as an array.
+
+
+
+**[a,...b,]=[1,2,3,4,5]
+
+What are a and b values?
+
+
+
+a is assigned the value 1 and b is assigned an array [2, 3, 4, 5].
+
+
+
+3) 
+
+const fun = () => arguments.length;
+
+console.log(fun(1,2));
+
+
+
+op-
+
+0
+
+
+
+ arguments object is not accessible and arguments.length will always be 0.
+
+
+
+4) Let str=”JavaScript=Node=Express”;  replace “=” with “.”?
+
+
+
+.replace() method to replace all instances of a specific character in a string. To replace all "=" characters in the string str with "."
+
+
+
+let str = "JavaScript=Node=Express";
+
+str = str.replace(/=/g, ".");
+
+console.log(str); // "JavaScript.Node.Express"
+
+
+
+
+
+5) Reverse the string given str=”India” to "aidnI"
+
+
+
+let str = "India";
+
+str = str.split("").reverse().join("");
+
+console.log(str); // "aidnI"
+
+
+
+
+
+6)
+
+ Let arr=[7,8,9,10]
+
+Write a function to check if the given number "n" exists in the array.
+
+If present remove the number from the array , return the remaining array excluding the number else print element not present.
+
+
+
+Example Input 1
+
+
+
+arr=[7,8,9,10] , n=8
+
+
+
+Output
+
+
+
+arr=[7,9,10]
+
+
+
+Example Input 2
+
+
+
+arr=[7,8,9,10] , n=10
+
+
+
+Output
+
+
+
+"Element not present"
+
+
+
+
+
+sol:
+
+
+
+function removeNumber(arr, n) {
+
+ let index = arr.indexOf(n);
+
+ if (index === -1) {
+
+  console.log(`${n} not found`);
+
+ } else {
+
+  arr.splice(index, 1);
+
+  console.log(arr);
+
+ }
+
+}
+
+
+
+let arr = [7, 8, 9, 10];
+
+removeNumber(arr, 9); // [7, 8, 10]
+
+removeNumber(arr, 11); // 11 not found
+
+
+
+
+
+
+

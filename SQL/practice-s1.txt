@@ -1,0 +1,133 @@
+Practice-S1-Solutions
+
+
+
+
+1) Write a Query to display the number of employees working in each region? 
+
+
+
+SELECT region, count(*) as num_employees
+
+FROM employees
+
+GROUP BY region;
+
+
+
+
+
+2) Write SQL query to fetch employee names having a salary greater than or equal to 20000 and less than or equal 10000.
+
+
+
+SELECT empName
+
+FROM employees
+
+WHERE salary >= 20000 AND salary <= 10000;
+
+
+
+
+
+3) Given a table Employee having columns empName and empId, what will be the result of the SQL query below? select empName from Employee order by 2 asc;
+
+
+
+The result of the SQL query select empName from Employee order by 2 asc; would be an error because order by 2 is not a valid column reference. 
+
+The correct query would be select empName from Employee order by empId asc;
+
+
+
+
+
+4) How to delete a column in SQL? Please write the query.
+
+
+
+ALTER TABLE employees
+
+DROP COLUMN column_name;
+
+
+
+
+
+5) How to find the nth highest salary in SQL?
+
+
+
+SELECT salary
+
+FROM employees
+
+WHERE (SELECT COUNT(DISTINCT salary)
+
+    FROM employees
+
+    WHERE salary >= e.salary) <= n;
+
+
+
+
+
+6) How to add a new column in SQL?
+
+
+
+ALTER TABLE employees
+
+ADD COLUMN new_column_name datatype;
+
+
+
+
+
+7) Write a Query to display odd records from student table?
+
+
+
+SELECT *
+
+FROM students
+
+WHERE MOD(id, 2) = 1;
+
+
+
+
+
+8) How to fetch alternate records from a table?
+
+
+
+SELECT *
+
+FROM (
+
+ SELECT *, ROW_NUMBER() OVER (ORDER BY id) as row_num
+
+ FROM students
+
+) as temp
+
+WHERE MOD(row_num, 2) = 1;
+
+
+
+
+
+9) Write a Query to display employee details belongs to ECE department?
+
+
+
+SELECT *
+
+FROM employees
+
+WHERE department = 'ECE';
+
+
+

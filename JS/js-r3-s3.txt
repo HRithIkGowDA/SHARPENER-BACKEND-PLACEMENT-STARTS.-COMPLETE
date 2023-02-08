@@ -1,0 +1,195 @@
+Javascript Round 3 - SET 3-Solutions
+
+
+
+
+1) Difference between ‘==’ and’ ===’ ?
+
+
+
+The double equal sign (==) operator in programming is used for comparison of values after type coercion. This means that it will try to convert the data types of the operands to a common type, before making the comparison.
+
+
+
+1 == "1" // true, after type coercion both become equal
+
+
+
+On the other hand, the triple equal sign (===) operator is used for strict comparison of values, without type coercion. This means that it will only return true if the operands have the same value and the same type.
+
+
+
+1 === "1" // false, data types are different (number and string)
+
+
+
+
+
+
+
+2) Difference between null and undefined
+
+
+
+
+
+undefined is a value in JavaScript that indicates that a variable has been declared, but has not been assigned a value.
+null is a value in JavaScript that represents an intentional non-value, used to explicitly indicate that a variable has no value.
+
+
+let x;
+
+console.log(x); // undefined
+
+
+
+x = null;
+
+console.log(x); // null
+
+
+
+
+
+3) what will the output (true or false) of the following be?Explain why?
+
+
+
+console.log(null === undefined)
+
+console.log(null == undefined)
+
+
+
+console.log(null === undefined) will output false.
+
+The === operator checks for both value equality and type equality, so null and undefined are not equal.
+
+
+
+console.log(null == undefined) will output true.
+
+The == operator checks for value equality but with type coercion, so null and undefined are considered equal.
+
+
+
+
+
+
+
+4)What is event bubbling and event capturing (Event Propagation)? what is the difference between them? Can you give a code example to explain how you can use event bubbling ?
+
+
+
+Event bubbling and event capturing are two ways of event propagation in the HTML DOM.
+
+
+
+Event bubbling means that the event first triggers on the innermost element and then propagates to outer elements.
+
+
+
+Event capturing means that the event first triggers on the outermost element and then propagates to inner elements.
+
+
+
+<div id="div1">
+
+ <p id="p1">
+
+  <button id="btn1">Click me</button>
+
+ </p>
+
+</div>
+
+
+
+<script>
+
+ const btn1 = document.querySelector("#btn1");
+
+ const p1 = document.querySelector("#p1");
+
+ const div1 = document.querySelector("#div1");
+
+
+
+ btn1.addEventListener("click", function() {
+
+  console.log("Button clicked");
+
+ });
+
+
+
+ p1.addEventListener("click", function() {
+
+  console.log("Paragraph clicked");
+
+ });
+
+
+
+ div1.addEventListener("click", function() {
+
+  console.log("Div clicked");
+
+ });
+
+</script>
+
+
+
+
+
+5)What is function currying? Can you create a curried function and explain?
+
+
+
+Function currying is a technique in functional programming where you create a new function by transforming an existing function with a partial application of its arguments.
+
+
+
+const multiply = (a) => (b) => a * b;
+
+
+
+const double = multiply(2);
+
+console.log(double(3)); // 6
+
+console.log(double(4)); // 8
+
+
+
+In this example, multiply is a curried function that takes a as its first argument, and returns a new function that takes b as its second argument. The new function, double, is created by calling multiply with an argument of 2. When double is called with an argument of 3, the multiplication takes place, and the result is 6.
+
+
+
+
+
+6) What is an IIFE (Immediately Invoked function expression)? Can you give an example?
+
+
+
+An Immediately Invoked Function Expression (IIFE) is a function that is immediately executed after it is defined. It is often used to create a new scope and maintain privacy for variables and functions.
+
+
+
+(function () {
+
+ const message = "Hello World!";
+
+ console.log(message);
+
+})();
+
+
+
+ the function is defined and immediately invoked within the same statement, so the message variable is not accessible outside of the IIFE and the console.log statement is immediately executed.
+
+
+
+
+

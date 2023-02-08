@@ -1,0 +1,97 @@
+SQL-S4-SOLUTIONS
+
+
+
+
+1) What is a subquery? What are its various types?
+
+
+
+A subquery is a query nested within another query. It returns a result set that is used in the main query as an input. There are several types of subqueries, including single-row, multiple-row, correlated and uncorrelated subqueries.
+
+
+
+
+
+2) Can you give an example where you might use subquery
+
+
+
+Consider a table 'employees' with columns 'id', 'name', 'age', 'salary' and a table 'departments' with columns 'id', 'name', 'location'.
+
+We want to find all employees who work in departments located in 'New York'
+
+The subquery to find all departments located in 'New York':
+
+
+
+SELECT id FROM departments WHERE location = 'New York'  //subquery way 
+
+
+
+
+
+SELECT name, age, salary  // main query way
+
+FROM employees
+
+WHERE department_id IN (
+
+ SELECT id FROM departments WHERE location = 'New York'
+
+)
+
+
+
+
+
+3) What is the use of UNION keyword in SQL? Write an example query.
+
+
+
+The UNION keyword is used to combine the result sets of two or more SELECT statements into a single result set. The columns in the result set must have the same number of columns, and the data types of the columns must be compatible. Example:
+
+
+
+SELECT column1, column2, column3
+
+FROM table1
+
+UNION
+
+SELECT column1, column2, column3
+
+FROM table2
+
+
+
+4) What are Entities and Relationship (ER)?
+
+
+
+Entities are objects, people, concepts, or events, etc. in the real world that are represented in the database. Relationships are the associations or connections between entities.
+
+
+
+
+
+5) What are the differents types of relationships which are there?
+
+
+
+There are several types of relationships, including one-to-one, one-to-many, many-to-one, and many-to-many relationships.
+
+
+
+6) Can you make an ER Diagram of any one of your past projects and explain it and explain how you handled all the different types of relationship as mentioned above?
+
+
+
+For example, let's consider a project management system. In this system, we have entities such as projects, tasks, and employees. A project can have many tasks, and a task can belong to one project (one-to-many relationship). An employee can be assigned to many tasks, and a task can be assigned to one employee (many-to-one relationship). We can represent these relationships in an ER diagram as follows:
+
+[Employee] ----< [Task] >---- [Project]
+
+
+
+i can do this ER for expense tracker , ecom , mail and chat app
+

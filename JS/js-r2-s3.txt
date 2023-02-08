@@ -1,0 +1,197 @@
+Javascript Round 2 - SET 3-Solutions
+
+
+
+
+1) What is the temporal dead zone?
+
+
+
+The TDZ refers to the period of time between the start of the block in which a let or const variable is declared and the actual declaration of the variable.  During this period, the variable is not yet defined, and attempting to access it will result in a ReferenceError
+
+
+
+console.log(x); // ReferenceError: x is not defined
+
+let x = 5;
+
+
+
+2) 
+
+Const person=
+
+{
+
+Name:p1,
+
+Age:24
+
+}
+
+
+
+**Can we change age to 25? 
+
+
+
+Yes, we can change the Age property of the person object from 24 to 25. Objects in JavaScript are mutable
+
+
+
+const person = {
+
+ Name: "p1",
+
+ Age: 24
+
+};
+
+person.Age = 25;  //= operator
+
+console.log(person); // { Name: "p1", Age: 25 }
+
+
+
+
+
+
+
+**Can we do person.push(age:25);?
+
+
+
+No, we cannot use the push method on an object. The push method is used to add elements to the end of an array, but person is an object, not an array.
+
+
+
+To add a new property to an object, you can use the assignment operator =
+
+
+
+(same example as above)
+
+
+
+
+
+3) Write a function to generate random number between 10 and 99?
+
+
+
+ sure , using the Math.random() function 
+
+
+
+function generateRandomNumber() {
+
+ return Math.floor(Math.random() * (99 - 10 + 1) + 10);
+
+}
+
+console.log(generateRandomNumber());
+
+
+
+
+
+
+
+4) Difference between settimeout, setinterval setimmediate?
+
+
+
+**setTimeout is a function in JavaScript that is used to execute a callback function after a specified delay. The delay is given in milliseconds.
+
+
+
+setTimeout(() => {
+
+ console.log("Hello after 2 seconds");
+
+}, 2000);
+
+
+
+
+
+**setInterval is a function in JavaScript that is used to execute a callback function repeatedly after a specified interval. The interval is given in milliseconds.
+
+
+
+let count = 0;
+
+const intervalId = setInterval(() => {
+
+ console.log(`Hello every second, count: ${count++}`);
+
+ if (count >= 5) {
+
+  clearInterval(intervalId);
+
+ }
+
+}, 1000);
+
+
+
+
+
+**setImmediate is a function in JavaScript that is used to execute a callback function as soon as possible in the next iteration of the event loop.
+
+
+
+setImmediate(() => {
+
+ console.log("Hello immediately");
+
+});
+
+
+
+
+
+
+
+5)  Difference between null and undefined
+
+
+
+undefined is a value in JavaScript that indicates that a variable has been declared, but has not been assigned a value.
+null is a value in JavaScript that represents an intentional non-value, used to explicitly indicate that a variable has no value.
+
+
+let x;
+
+console.log(x); // undefined
+
+
+
+x = null;
+
+console.log(x); // null
+
+
+
+
+
+
+
+6) Difference between undeclared and undefined
+
+
+
+undeclared means a variable has not been declared in the current scope and trying to access it will result in a ReferenceError.
+undefined means a variable has been declared, but has not been assigned a value and trying to access it will return undefined.
+
+
+console.log(x); // ReferenceError: x is not defined
+
+
+
+let x;
+
+console.log(x); // undefined
+
+
+

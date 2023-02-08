@@ -1,0 +1,233 @@
+Javascript Round 3 - SET 2-Solutions
+
+
+
+
+1) What were the 10 new features that were introduced in ES6? Explain each one of them in detail? You will be asked questions on each example you give?
+
+
+
+The 10 new features introduced in ECMAScript 6 (ES6) are:
+
+
+
+
+
+a) let and const: "let" is used to declare variables with block scope and "const" is used to declare variables that cannot be re-assigned.
+b) Arrow Functions: A shorthand for writing function expressions.
+c) Template Literals: A new way to include expressions in string literals.
+d) Destructuring: A concise way to extract values from arrays or objects.
+e) Default Parameters: Specifying default values for function parameters.
+f) Rest and Spread Operators: Used to handle multiple parameters or elements in arrays.
+g) Classes: A class-based approach to object-oriented programming.
+h) Modules: Encapsulating code and splitting it into multiple files.
+i) Set and Map data structures: New data structures for efficiently storing unique values.
+j) Promises: A pattern for handling asynchronous code.
+
+
+
+
+2) Call, Apply, Bind. When to use what ? Can you give an example?
+
+
+
+a) "call" is used to invoke the function and specify the "this" value as the first argument.
+
+
+
+function greet(greeting) {
+
+ console.log(`${greeting}, ${this.name}!`);
+
+}
+
+const john = { name: "John" };
+
+greet.call(john, "Hello"); // "Hello, John!"
+
+
+
+
+
+b) "apply" is used to invoke the function and specify the "this" value as the first argument, but the second argument should be an array of arguments.
+
+
+
+function greet(greeting) {
+
+ console.log(`${greeting}, ${this.name}!`);
+
+}
+
+const john = { name: "John" };
+
+greet.apply(john, ["Hello"]); // "Hello, John!"
+
+
+
+
+
+
+
+c) "bind" is used to return a new function with a specified "this" value, and any additional arguments to be partially applied.
+
+
+
+function greet(greeting) {
+
+ console.log(`${greeting}, ${this.name}!`);
+
+}
+
+const john = { name: "John" };
+
+const greetingJohn = greet.bind(john, "Hello");
+
+greetingJohn(); // "Hello, John!"
+
+
+
+
+
+
+
+3) What are different ways to store data in browser? Explain each one of them and when should we use what?
+
+
+
+There are several ways to store data in the browser:
+
+a) Cookies: A small amount of data stored on the client-side and sent to the server with each request.
+
+b) Local Storage: A key-value store that allows you to persist data in the browser even after the user closes the tab.
+
+c) Session Storage: Similar to local storage, but the data is cleared when the user closes the tab.
+
+d) IndexedDB: A low-level API for client-side storage, with a flexible schema and support for transactions.
+
+
+
+You should choose the appropriate storage mechanism based on your use case and the amount of data you need to store. For example, if you need to store a small amount of data for a single session, you could use session storage. If you need to store large amounts of data, you could use IndexedDB.
+
+
+
+4)What are generator function in javascript ? How are they different from normal function?
+
+
+
+Generator functions are functions that can be paused and resumed, allowing you to generate a sequence of values over time. They are defined using the "function*" syntax.
+
+
+
+function* counter() {
+
+ let i = 0;
+
+ while (true) {
+
+  yield i;
+
+  i++;
+
+ }
+
+}
+
+const gen = counter();
+
+console.log(gen.next().value); // 0
+
+console.log(gen.next().value); // 1
+
+
+
+Generators are different from normal functions because they can be paused and resumed, and they return an object with a "next" method instead of a return value
+
+
+
+
+
+5)Difference between arr.foreach, array.map and array.filter? Take example input array and explain the output which you will get
+
+
+
+The Array.forEach, Array.map, and Array.filter methods are used to manipulate arrays in JavaScript
+
+:
+
+a) Array.forEach: Iterates over an array and performs a function on each element, but does not modify the original 
+
+array.
+
+
+
+const numbers = [1, 2, 3, 4];
+
+numbers.forEach(number => console.log(number));
+
+// Output: 
+
+// 1
+
+// 2
+
+// 3
+
+// 4
+
+
+
+
+
+b) Array.map: Iterates over an array, performs a function on each element, and returns a new array with the results
+
+
+
+const numbers = [1, 2, 3, 4];
+
+const doubledNumbers = numbers.map(number => number * 2);
+
+console.log(doubledNumbers); // [2, 4, 6, 8]
+
+
+
+
+
+c)Array.filter: Iterates over an array, performs a test on each element, and returns a new array with the elements that pass the test.
+
+
+
+const numbers = [1, 2, 3, 4];
+
+const evenNumbers = numbers.filter(number => number % 2 === 0);
+
+console.log(evenNumbers); // [2, 4]
+
+
+
+
+
+
+
+6)What is the use of arr.reduce? Explain with an example.
+
+
+
+Array.reduce: Iterates over an array and reduces it to a single value, by performing a function on each element and passing the result from one iteration to the next.
+
+
+
+const numbers = [1, 2, 3, 4];
+
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+console.log(sum); // 10
+
+
+
+
+
+
+
+The reduce method takes two arguments: a callback function and an initial value for the accumulator. The callback function takes two arguments: the accumulator and the current value from the array. On each iteration, the accumulator is updated with the result of the callback function.
+

@@ -1,0 +1,113 @@
+Javascript Round 1 - SET 1-Solutions
+
+
+1) What is difference between let and const? What is the difference between let and var?
+
+
+
+The main difference between let and const in JavaScript is that const is used for declaring a constant or read-only reference to a value, which means that the value cannot be re-assigned. On the other hand, let is used for declaring variables whose values can be changed in the future
+
+.
+
+The difference between let and var is that var is function scoped, which means that a variable declared with var is accessible within the entire function it is declared, while let and const are block scoped, which means that they are only accessible within the block they are declared in.
+
+
+
+In general, it is recommended to use const by default and use let only if the value needs to be reassigned. var should be avoided in modern JavaScript development.
+
+
+
+
+
+2) what is output of this function
+
+function sample (){
+
+for (let i=0; i<=5;i++){
+
+setTimeout (() => Console.log(i), 1000 );
+
+}
+
+}
+
+
+
+op-
+
+
+
+6
+
+6
+
+6
+
+6
+
+6
+
+6
+
+This is because, despite the use of let, i is still accessible within the callback function passed to setTimeout. Since all of the callbacks are referencing the same i and the for loop has already completed executing, the value of i is 6 when each of the callbacks are invoked.
+
+
+
+
+
+
+
+3)  what is output of this
+
+
+
+SetTimeout(()=>{
+
+Console.log("a");
+
+},2000)
+
+Console.log("b") ;
+
+
+
+op-
+
+
+
+b
+
+a
+
+
+
+So first, the console.log("b") line is executed and "b" is logged to the console, and then after 2 seconds "a" is logged to the console.
+
+
+
+
+
+4) how can you print a first and b later with. You are not allowed to use any extra setTimeouts?
+
+
+
+You can use JavaScript's async/await to make the code wait for a certain amount of time before executing a block of code.
+
+
+
+async function printFirstAndLater() {
+
+ console.log("a");
+
+ await new Promise(resolve => setTimeout(resolve, 2000));
+
+ console.log("b");
+
+}
+
+
+
+printFirstAndLater();
+
+
+

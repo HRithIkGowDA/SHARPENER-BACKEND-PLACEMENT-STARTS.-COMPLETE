@@ -1,0 +1,162 @@
+Javascript Round 2 - SET 1-Solutions
+
+
+
+
+﻿1) What is output of this
+
+
+
+SetImmidiate (()=>{
+
+Console.log("first")
+
+})
+
+SetTimeout (()=>{
+
+Console.log("second")
+
+})
+
+Console.log("third");
+
+
+
+op-
+
+
+
+third
+
+first
+
+second
+
+
+
+In this code, console.log("third") is executed first, and then the callbacks passed to setImmediate and setTimeout are executed, with the setImmediate callback being executed before the setTimeout callback.
+
+
+
+setImmediate and setTimeout are both asynchronous functions in Node.js. setImmediate schedules a callback to be executed after the current iteration of the event loop has completed, while setTimeout schedules a callback to be executed after a specified amount of time has passed.
+
+
+
+
+
+2) Difference between SetImmidiate and Process.nexttick ?
+
+
+
+The difference between setImmediate and process.nextTick is in the timing of when they schedule their callbacks to be executed. process.nextTick adds a callback to be executed on the next iteration of the event loop, which means it has the highest priority and will be executed before other callbacks. 
+
+
+
+On the other hand, setImmediate schedules a callback to be executed after the current iteration of the event loop has completed, which means it has a lower priority and will be executed after I/O events and timers.
+
+
+
+
+
+
+
+3) What is difference between promise and call back?
+
+
+
+A callback function is a function that is passed as an argument to another function and is executed after the outer function has completed. It is a way to handle asynchronous operations in JavaScript. A promise is an object that represents a value that may not be available yet but will be at some point in the future. 
+
+
+
+A promise can be thought of as a placeholder for a future value, and it can be used to handle asynchronous operations in a more elegant way than callbacks.
+
+
+
+ The main difference between a callback and a promise is that a callback is used to handle the results of an asynchronous operation immediately after it has completed, while a promise is used to handle the results of an asynchronous operation at some point in the future.
+
+
+
+
+
+
+
+4) What is output ?
+
+
+
+ Let a=New Promise((resolve,reject)=>{
+
+reject ({ msg: 'Something went wrong' ))
+
+})
+
+a.then(ressolve=>{console.log{ressolve}}).catch(err=>{console.log(err.msg) })
+
+
+
+op-
+
+
+
+Something went wrong
+
+
+
+In this code, a is a promise that is rejected with an object that has a msg property. The .then method is called on a to handle the resolved value of the promise, but since the promise is rejected, the .catch method is called instead. The .catch method takes a callback that is executed with the rejection value, which in this case is the object { msg: 'Something went wrong' }. The console.log(err.msg) statement is executed, and the string "Something went wrong" is logged to the console.
+
+
+
+
+
+
+
+
+
+5) what is output ?
+
+
+
+await delay(6000)
+
+SetTimeout (()=>{
+
+console.log("first")
+
+},10000)
+
+console.log("second");
+
+
+
+op-
+
+
+
+second
+
+first
+
+
+
+In this code, await delay(6000) is a non-sensical statement, as await is only valid inside an async function. Also, delay is not a defined function. The setTimeout function schedules a callback to be executed after 10,000 milliseconds, or 10 seconds, have passed. The console.log("second") statement is executed immediately and logs the string "second" to the console. The callback passed to setTimeout is executed after 10 seconds have passed, and it logs the string "first" to the console.
+
+
+
+
+
+
+
+6) What is function definition ?
+
+
+
+A function definition is a statement that creates a function and assigns it to a variable or a property of an object. In JavaScript, functions can be defined using the function keyword or the () => arrow function syntax. A function definition consists of a function header, which specifies the name of the function and its parameters, and a function body, which contains the statements that are executed when the function is called
+
+
+
+function add(a, b) {
+
+ return a + b;
+
+}
