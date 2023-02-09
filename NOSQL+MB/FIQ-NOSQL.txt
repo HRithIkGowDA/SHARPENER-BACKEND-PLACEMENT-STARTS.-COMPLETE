@@ -1,0 +1,54 @@
+Favourite interview question-NOSQL
+
+
+
+
+1)answer the difference between NOSQL and SQL.
+
+
+
+The main difference between SQL and NoSQL is the way that data is stored and organized.
+
+
+
+SQL (Structured Query Language) is a traditional, relational database management system that uses a fixed schema and stores data in tables with rows and columns. This means that each row in the table represents a single record, and each column represents a specific data element for that record. The data is highly organized and easily searchable, making SQL a popular choice for data that requires a high level of structure and organization, such as financial records and customer information.
+
+
+
+NoSQL (Not Only SQL) refers to a non-relational, document-oriented database management system that uses a flexible schema and stores data in a more unstructured way, often using JSON or BSON (Binary JSON) documents. This means that each document in a NoSQL database can contain different fields, making it easier to store complex, hierarchical data structures. NoSQL databases are often used for large-scale, data-intensive applications that require fast read and write performance, such as social media and gaming.
+
+
+
+2) When will you use SQL and when will you use NOSql. Explain with example.
+
+
+
+When to use SQL:
+
+When you have a large amount of structured data that requires a fixed schema, such as financial records, customer information, or sales data.
+
+
+When you need to enforce data integrity, such as enforcing unique constraints or referential integrity.
+
+
+When you need to run complex queries, such as aggregating data or joining multiple tables.
+
+
+Example: A banking application that needs to store customer information and transactions in a highly organized and structured way, using SQL would be an appropriate choice.
+
+
+
+When to use NoSQL:
+
+
+
+When you have a large amount of unstructured or semi-structured data, such as user-generated content, sensor data, or log files.
+
+
+When you need fast read and write performance, such as in real-time, data-intensive applications like social media and gaming.
+
+
+When you need to scale your database horizontally, by adding more nodes to the database cluster, without downtime or loss of data.
+
+
+Example: A social media application that needs to store large amounts of unstructured data, such as posts, comments, and likes, in a flexible and scalable way, using NoSQL would be an appropriate choice.

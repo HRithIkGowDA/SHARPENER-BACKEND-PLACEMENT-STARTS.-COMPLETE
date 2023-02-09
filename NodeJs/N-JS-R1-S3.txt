@@ -1,0 +1,101 @@
+NODE JS SET 1 - ROUND 3-SOLUTIONS
+
+
+
+
+
+
+1)What are web servers? How are they different from your laptop
+
+
+
+Web servers are software systems that are designed to host web applications and serve static and dynamic web content over the internet. They listen for incoming requests from clients and respond with the appropriate content. They are different from your laptop in that they are typically designed to handle a high number of requests and are optimized for performance, reliability, and security.
+
+
+
+
+
+2)Write a SQL query to demonstrate joins and order by? Take any table example
+
+
+
+SELECT employees.name, departments.department_name
+
+FROM employees
+
+JOIN departments ON employees.department_id = departments.department_id
+
+ORDER BY employees.name;
+
+
+
+.
+
+3)What are classes in javascript?
+
+
+
+In JavaScript, classes are a way to create objects with a specific structure and behavior. Classes provide a blueprint for creating objects, which can be instantiated multiple times to create multiple instances of the object.
+
+
+
+
+
+4)What are constructors? what does super() do in js?
+
+
+
+Constructors are special methods that are called when an object is created from a class. They are used to initialize the object's properties and perform any other setup that is required. The super() function is used to call the constructor of the parent class. It must be called in the child class constructor, before any other statement.
+
+
+
+
+
+5)What are destructors? when are they called?
+
+
+
+Destructors are special methods that are used to clean up resources when an object is no longer needed. Destructors are commonly used in object-oriented programming languages to release resources such as memory, file handles, or database connections that are being held by an object.
+
+
+
+Destructors are typically called automatically by the garbage collector in the language 
+
+
+
+Note that destructors are not available in JavaScript. Instead, developers in JavaScript typically use a combination of event handlers and reference counting to manage memory and other resources in their applications.
+
+
+
+6)Explain garbage collection in js.? When is a variable garbage collected?
+
+
+
+Garbage collection in JavaScript is the process by which the JavaScript engine automatically frees up memory that is no longer being used by the program. 
+
+A variable is garbage collected when it is no longer reachable from any part of the program.
+
+
+
+
+
+7)How do you do error logging in your application? (Say you use sentry , Watch this video
+
+
+
+Error logging is a process of recording errors that occur in your application. Sentry is a popular error logging service that can be used to log and track errors in your application. To use Sentry for error logging, you would typically install the Sentry library in your application and configure it to send errors to your Sentry account. Then, you can use the Sentry API to log errors in your code.
+
+
+
+try {
+
+ // your code
+
+} catch (error) {
+
+ Sentry.captureException(error);
+
+}
+
+
+

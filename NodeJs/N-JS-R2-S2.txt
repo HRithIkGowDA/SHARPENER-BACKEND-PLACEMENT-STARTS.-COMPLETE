@@ -1,0 +1,110 @@
+NODE JS SET 2 - ROUND 2-SOLUTIONS
+
+
+
+
+1) Explain the steps for deploying the code to AWS?
+
+
+
+Create an AWS account.
+
+
+Choose an AWS service that best fits your application requirements, such as EC2, Beanstalk, Lambda, or S3.
+
+
+Set up a virtual machine or container environment using EC2.
+
+
+Connect to your instance using an SSH client.
+
+
+Install the necessary software and packages required for your application.
+
+
+Copy your application code to the instance.
+
+
+Configure your application environment.
+
+
+Test your application to make sure it's running correctly.
+
+
+Launch your application and make it accessible to the internet.
+
+
+
+
+2) What all files will you add to .gitignore file?
+
+
+
+.gitignore file: The .gitignore file is used to specify files or directories that should not be tracked by Git version control. Files such as configuration files, passwords, build artifacts, and others that are specific to your local environment should be added to the .gitignore file.
+
+
+
+3) What is the use of pm2 ? What advantage does it give?
+
+
+
+PM2: PM2 is a process manager for Node.js applications. It helps to keep your application running continuously, restarting it if it crashes and allowing you to manage it easily using a simple command-line interface.
+
+
+
+4) What are the different pm2 commands that you have used?
+
+
+
+PM2 commands: Some of the commonly used PM2 commands are:
+
+pm2 start: starts an application
+
+
+pm2 stop: stops an application
+
+
+pm2 restart: restarts an application
+
+
+pm2 list: lists all running applications managed by PM2
+
+
+pm2 monit: displays real-time performance data for an application
+
+
+
+
+5) What is the use package json file?
+
+
+
+package.json: The package.json file is a configuration file for Node.js applications. It lists the dependencies required by your application and metadata about the project, such as the version number, author, and description.
+
+
+
+6) What is the use of packagelock.json?Why do we even need it?
+
+
+
+package-lock.json: The package-lock.json file is used to lock down the versions of the dependencies installed in your application. It helps to ensure that the dependencies installed on different machines are the same, even if they have different version ranges specified in the package.json file.
+
+
+
+
+
+7)What is the difference between dependencies and devdependencies in package.json? When to use what?
+
+
+
+Dependencies vs devDependencies:
+
+
+
+Dependencies are packages that are required for your application to run in production.
+
+
+devDependencies are packages that are required for development, testing, and building the application, but are not necessary for production.
+
+
+You should add packages required for production to dependencies, and packages required for development to devDependencies.

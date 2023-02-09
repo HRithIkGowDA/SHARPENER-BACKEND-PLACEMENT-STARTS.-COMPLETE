@@ -1,0 +1,58 @@
+No Sql Interview preparation-SOLUTIONS
+
+1. What are some of the advantages of MongoDB?
+Some of the advantages of MongoDB include:
+
+
+
+Document-oriented storage: MongoDB uses a document-based data model, which allows for more flexible and dynamic data structures.
+
+
+Scalability: MongoDB can easily scale horizontally by adding more servers, making it well-suited for applications with large amounts of data and high user traffic.
+
+
+Performance: MongoDB uses an index-based data access model, which provides fast and efficient data retrieval.
+
+
+Rich query language: MongoDB supports a rich query language that allows you to perform complex data manipulation and analysis operations.
+
+
+High availability: MongoDB provides built-in support for replica sets, which allow for automatic failover and high availability.
+
+
+
+
+2. What is a Document in MongoDB?
+
+
+In MongoDB, a Document is a basic unit of data that is stored in a collection. A document is a set of key-value pairs, where the keys represent field names and the values represent the data stored in those fields. Documents are similar to rows in a traditional relational database.
+
+
+
+3. What are Databases in MongoDB?
+
+
+In MongoDB, a Database is a container for collections, which in turn hold the documents. A single MongoDB instance can host multiple databases, each with its own collections and documents
+
+
+
+
+
+4. How do you Scale up MongoDB to handle millions of users? (This can impress interviewers)
+(Sharding and indexing are two common concepts used here)
+
+
+
+To handle millions of users in MongoDB, you can scale the system horizontally by adding more servers. This can be achieved using the following strategies:
+
+
+
+Sharding: Sharding involves splitting the data across multiple servers, which allows you to distribute the load and improve performance.
+
+
+Replication: Replication involves creating multiple copies of the data, which provides increased reliability and availability.
+
+
+Indexing: Indexing is the process of creating an index on a specific field in the documents, which can improve the speed of data retrieval operations.
+
+

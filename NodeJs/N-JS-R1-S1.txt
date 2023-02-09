@@ -1,0 +1,60 @@
+NODE JS SET 1 - ROUND 1-SOLUTIONS
+
+
+1) What are the advantages of Node Js?
+
+
+
+Advantages of Node.js:
+
+It uses JavaScript, which is a popular language and easy to learn.
+It allows developers to use a single language across the full stack of development.
+It is fast and efficient, due to its use of an event-driven, non-blocking I/O model.
+It has a large and active developer community, which provides a wealth of packages and modules that can be used to extend its functionality.
+It is easy to scale, making it a good choice for applications that expect a lot of traffic.
+
+
+
+
+2) What is module.exports ?
+
+
+
+module.exports is a way to export values from a Node.js module. It allows the values to be used by other modules that require the module.
+
+
+
+3) what are default exports?
+
+
+
+default exports are a way to export a single value from a Node.js module as the default export. It allows the module to be imported without having to use curly braces to access the exported value.
+
+
+
+4) What is cors?
+
+
+
+CORS stands for "Cross-Origin Resource Sharing." It is a security feature implemented by web browsers that restricts the ability of a web page to make requests to a different domain.
+
+
+
+
+
+5) What are REST APIs? How does it work?
+
+
+
+REST APIs (Representational State Transfer APIs) are a way to create web services that allow clients to access and manipulate data stored on a server. REST APIs work by using HTTP methods (such as GET, POST, PUT, and DELETE) to interact with resources stored on a server. The API defines the endpoints that clients can use to access these resources, as well as the types of requests that can be made to each endpoint.
+
+
+
+
+
+6) What is Event loop? (Watch this video
+
+
+
+The Event Loop is a central part of Node.js that is responsible for managing the execution of code. It is an infinite loop that listens for events and schedules the execution of callback functions in response to those events. This allows Node.js to handle multiple requests simultaneously, without blocking the main thread.
+

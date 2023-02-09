@@ -1,0 +1,77 @@
+NODE JS SET 1 - ROUND 2-SOLUTIONS
+
+
+
+
+1)What is expressJS?
+
+
+
+Express.js is a web application framework for Node.js. It provides a robust set of features for web and mobile applications. It allows you to define routes and handlers for incoming HTTP requests, as well as manage things like cookies, sessions, and other important elements of web applications.
+
+
+
+
+
+2)Node js is single threaded or multithreaded?
+
+
+
+Node.js is single-threaded, meaning that it uses a single thread to handle multiple client requests.
+
+
+
+3)If node js is single threaded then how does it handle concurrency?
+
+
+
+To handle concurrency in a single-threaded environment, Node.js uses an event-driven, non-blocking I/O model. This allows it to handle multiple requests simultaneously, without blocking the main thread. When a request comes in, Node.js puts the request in a queue and continues to process other requests. When a request is ready to be processed, the appropriate callback function is executed.
+
+
+
+
+
+4)What are the different Http methods? Explain when to use what?
+
+
+
+The different HTTP methods are:
+
+GET: used to retrieve data from a server.
+POST: used to submit data to a server for processing.
+PUT: used to update data on a server.
+DELETE: used to delete data from a server.
+
+
+When to use each HTTP method depends on the specific use case. For example, you would use the GET method to retrieve data, the POST method to submit data, the PUT method to update data, and the DELETE method to delete data.
+
+
+
+5)In SQL what is primary key and foreign key?
+
+
+
+In SQL, a primary key is a unique identifier for a record in a table. It is used to enforce the integrity of the data in the table and to create relationships with other tables. 
+
+
+
+A foreign key is a field in one table that refers to the primary key of another table. This creates a relationship between the two tables and allows data to be queried across multiple tables.
+
+
+
+6)What are middlewares and what does next() function do?
+
+
+
+Middleware are functions that have access to the request and response objects, and the next middleware function in the application's request-response cycle. The next() function is used to pass control to the next middleware function in the cycle.
+
+
+
+7)Which module is used to read and write operations in a file?
+
+
+
+The fs (File System) module is used to perform read and write operations in a file. This module provides a simple API for reading and writing files, as well as other file system-related operations.
+
+
+

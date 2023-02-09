@@ -1,0 +1,148 @@
+NODE JS SET 3 - ROUND 1-SOLUTIONS
+
+1) Enhancing Node.js performance through clustering. How can you do this via forking?Can you write the code?
+
+
+Clustering in Node.js is a technique used to improve the performance and scalability of Node.js applications by running multiple instances of the application on the same server. 
+
+One way to implement clustering in Node.js is by using the fork method of the child_process module.
+
+
+
+ Here's an example of how you could implement clustering in Node.js using the fork method:
+
+
+
+const cluster = require('cluster');
+
+const http = require('http');
+
+const numCPUs = require('os').cpus().length;
+
+
+
+if (cluster.isMaster) {
+
+ console.log(`Master ${process.pid} is running`);
+
+
+
+ // Fork workers.
+
+ for (let i = 0; i < numCPUs; i++) {
+
+  cluster.fork();
+
+ }
+
+
+
+ cluster.on('exit', (worker, code, signal) => {
+
+  console.log(`worker ${worker.process.pid} died`);
+
+ });
+
+} else {
+
+ // Workers can share any TCP connection
+
+ // In this case it is an HTTP server
+
+ http.createServer((req, res) => {
+
+  res.writeHead(200);
+
+  res.end('hello world\n');
+
+ }).listen(8000);
+
+
+
+ console.log(`Worker ${process.pid} started`);
+
+}
+
+
+
+In this example, the cluster module is used to create a new fork for each CPU available on the server. Each fork is an independent instance of the Node.js application, and each instance runs its own instance of the HTTP server.
+
+
+
+
+
+2) What is the difference between fork() and spawn() methods in Node.js?
+
+
+The fork and spawn methods of the child_process module in Node.js are both used to create new child processes. The difference between these two methods lies in the way they communicate with the parent process.
+
+
+
+The fork method is used to create a new Node.js process and communicate with it using inter-process communication (IPC) channels. The fork method returns a ChildProcess object that allows you to send messages between the parent and child processes.
+
+
+The spawn method is used to start a new process and execute a specified command. Unlike the fork method, the spawn method does not create a new Node.js process and does not provide inter-process communication channels. Instead, it communicates with the child process using the standard input/output streams.
+
+
+3) What are some of the flags used in the read/write operations in files?
+
+
+Some of the flags used in read/write operations in files in Node.js are:
+
+'r': Open the file for reading.
+
+
+'r+': Open the file for reading and writing.
+
+
+'w': Open the file for writing. If the file does not exist, it will be created. If the file exists, it will be truncated.
+
+
+'wx': Open the file for writing, but only if it does not already exist.
+
+
+'a': Open the file for appending. If the file does not exist, it will be created.
+
+
+'ax': Open the file for appending, but only if it does not already exist.
+
+
+'rs': Open the file for synchronous reading.
+
+
+'w+': Open the file for reading and writing. If the file does not exist, it will be created. If the file exists, it will be truncated.
+
+
+
+
+4) What is a reactor and proactor pattern in Node.js? 
+
+
+The reactor and proactor patterns in Node.js are used to manage the handling of events and asynchronous operations in a server-side application.
+
+
+
+The reactor pattern is an event-driven approach that involves listening for events and executing a corresponding callback function when an event occurs. In Node.js, the reactor pattern is implemented using the Node.js Event Emitter API, which allows you to subscribe to events and trigger callbacks when events occur.
+
+
+
+The proactor pattern is a similar approach, but it is focused on performing asynchronous operations without blocking the event loop. In Node.js, this is typically achieved by using asynchronous APIs, such as the file system API, the network API, or the child process API.
+
+
+
+5) What is the purpose of NODE_ENV? Why do we even need the different environments like production and staging?
+
+
+The NODE_ENV environment variable in Node.js is used to specify the environment in which a Node.js application is running. The value of the NODE_ENV variable can be set to either production, development, or staging, depending on the environment in which the application is running.
+
+
+
+The purpose of different environments like production, development, and staging is to provide a way to test and develop applications in a controlled environment before deploying them to a production environment. 
+
+
+
+In a development environment, for example, it is common to use a more relaxed security configuration, write verbose log output, or enable debugging features, whereas in a production environment these types of settings are typically disabled.
+
+
+
+ This way, applications can be developed, tested, and debugged in a controlled environment before being deployed to a production environment, where they can run with the best performance and security.

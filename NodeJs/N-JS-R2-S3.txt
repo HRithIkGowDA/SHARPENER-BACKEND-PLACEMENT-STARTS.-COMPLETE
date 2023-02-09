@@ -1,0 +1,121 @@
+NODE JS SET 2 - ROUND 3-SOLUTIONS
+
+
+1. What is a first class function in Javascript?
+
+
+a first-class function is a function that can be treated like any other value (such as a number, string, object, etc.). This means that it can be assigned to a variable, passed as an argument to a function, or returned as a value from a function. 
+
+First-class functions are a key feature of functional programming and are widely used in JavaScript for a variety of purposes, such as creating higher-order functions, implementing event handlers, and more.
+
+
+
+2. What is Node.js and how it works?
+
+
+Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code server-side. It allows developers to build fast, scalable, and efficient network applications using JavaScript. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
+
+
+
+
+
+
+
+3. What are some commonly used timing features of Node.js?
+
+
+There are several commonly used timing features in Node.js, including:
+
+setTimeout: a function that allows you to execute a callback after a specified number of milliseconds.
+
+
+setInterval: a function that allows you to execute a callback repeatedly at a specified interval.
+
+
+process.nextTick: a function that allows you to schedule a callback to be executed as soon as possible, but not before the current execution context is completed.
+
+
+setImmediate: a function that allows you to execute a callback at the end of the current event loop iteration.
+
+
+4. What is fork in node JS?
+
+
+A fork in Node.js is a process that is created by the operating system to execute a new instance of the Node.js application. This allows multiple instances of the application to run simultaneously, which can be useful for improving performance and scalability.
+
+ In Node.js, you can create a new fork using the child_process.fork method.
+
+
+
+5. How many types of API functions are there in Node.js?
+
+
+There are two types of API functions in Node.js:
+
+
+
+Asynchronous functions: These functions allow you to perform non-blocking operations, such as reading or writing to a file, and return a value using a callback.
+
+
+Synchronous functions: These functions block the execution of your program until the operation is completed, and return the value directly.
+
+
+
+
+6.What do you understand by callback hell?
+
+
+Callback hell is a term used to describe the situation that arises when you have multiple nested callbacks in your code, resulting in difficult-to-read and maintainable code.
+
+
+
+ Callback hell is often a result of improperly managing asynchronous operations in your code, and can be prevented through the use of higher-order functions, promises, and async/await.
+
+
+
+
+
+7. If Node.js is single threaded then how does it handle concurrency?
+
+
+Although Node.js is single-threaded, it uses asynchronous I/O to handle concurrency. This means that while one request is being processed, other requests can be handled in the background, allowing multiple operations to be performed simultaneously. This allows Node.js to handle many requests efficiently, even though it is single-threaded.
+
+
+
+8. What is node.js streams?
+
+
+Node.js streams are a powerful and efficient way to process large amounts of data, by allowing you to read and write data in small chunks, rather than reading the entire dataset into memory. Streams can be used for a variety of purposes, such as reading data from a file, compressing or decompressing data, and more.
+
+
+
+9. What are node.js buffers?
+
+
+Node.js buffers are a low-level data structure used to store binary data, such as the contents of a file or a network packet. They are similar to arrays, but are optimized for performance and memory efficiency, and are not resizable. Buffers can be used to manipulate binary data in Node.js, and are used by many Node.js modules, such as the stream and buffer modules.
+
+
+
+10. Describe the 5 exit codes of Node.js?
+
+
+The 5 commonly used exit codes in Node.js are:
+
+
+
+0: success. This exit code indicates that the Node.js process terminated successfully.
+
+
+1: uncaught fatal exception. This exit code indicates that an uncaught exception was thrown and was not caught by any try-catch block in the code.
+
+
+2: unhandled rejection. This exit code indicates that a Promise was rejected and was not handled by a catch block
+
+
+3: internal JavaScript evaluation failure. This exit code indicates that an internal error occurred while evaluating JavaScript code.
+
+
+4: internal JavaScript run-time failure. This exit code indicates that an internal error occurred while running JavaScript code.
+
+
+These exit codes provide a way to understand the outcome of a Node.js process and can be useful for debugging and monitoring purposes.

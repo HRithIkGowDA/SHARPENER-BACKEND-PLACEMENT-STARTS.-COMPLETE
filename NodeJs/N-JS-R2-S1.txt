@@ -1,0 +1,96 @@
+NODE JS SET 2 - ROUND 1-SOLUTIONS
+
+
+
+
+1)What is abstraction and encapsulation
+
+
+
+Abstraction refers to the process of hiding the complexity of a system and showing only the necessary information to the user. In object-oriented programming, abstraction is achieved through classes, interfaces, and objects, where the implementation details of a class are hidden and only the necessary information is exposed to the user.
+
+
+
+Encapsulation refers to the wrapping of data and functions into a single unit (i.e. object) to protect the data from outside interference and misuse. In object-oriented programming, encapsulation is achieved through the use of classes and objects, where the data and functions are combined in a single unit and the data can only be accessed through the functions defined in the object.
+
+
+
+2) What is a jwt token ? How do you create a jwt token?
+
+
+
+JWT (JSON Web Token) is an open standard that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. JWT tokens are commonly used for authentication and authorization purposes. The token consists of three parts: a header, a payload, and a signature.
+
+
+
+To create a JWT token, you will need to encode the header, payload, and a secret key to create a signature. The header and payload are JSON objects that contain information about the token such as the algorithm used for the signature, the issuer of the token, and the claims. The signature is created by applying a hashing algorithm (such as HMACSHA256) to the header, payload, and secret key. Once the signature is created, the three parts of the token are concatenated with a dot separator.
+
+
+
+3) Explain the flow of login and authentication? How does the backend identify the user?
+
+
+
+The flow of login and authentication typically involves the following steps:
+The user submits their login credentials to the backend.
+The backend verifies the user's credentials by checking them against the stored user data.
+If the credentials are correct, the backend generates a JWT token and sends it back to the user.
+The user stores the JWT token and includes it in subsequent requests to the backend.
+
+
+For each subsequent request, the backend verifies the JWT token by decoding it and checking the signature to ensure that it has not been tampered with. If the token is valid, the backend returns the requested data.
+
+
+
+
+
+4 When you create a jwt token , how do you expire it after a certain amount of time? [Common question]
+
+
+
+JWT tokens can be expired by including an "exp" (expiration time) claim in the payload of the token. The value of the "exp" claim is a Unix timestamp indicating the time at which the token will expire. When the backend receives a request with an expired token, it will reject the request and prompt the user to log in again.
+
+
+
+5) what is the difference between Delete and truncate in sql
+
+
+
+The DELETE statement is used to delete specific rows from a table in a database. The DELETE statement can be used with a WHERE clause to specify which rows to delete
+
+.
+
+The TRUNCATE statement is used to delete all the data from a table in a database, including all rows and all indexes. Unlike the DELETE statement, the TRUNCATE statement is much faster and more efficient for deleting all the data from a table because it does not generate any undo logs or write any information to the transaction log.
+
+
+
+6) What are the different kinds of joins? Explain each one of them?
+
+
+
+Joins are a way to combine data from two or more tables in a relational database management system.
+
+
+
+There are several types of joins in SQL, including:
+
+
+
+INNER JOIN: The INNER JOIN keyword selects only the rows that have matching values in both tables. An INNER JOIN returns only the rows for which there is a match in both tables.
+
+
+LEFT (OUTER) JOIN: The LEFT JOIN keyword returns all the rows from the left table (table1), with the matching rows in the right table (table2). The result is NULL from the right side, if there is no match.
+
+
+RIGHT (OUTER) JOIN: The RIGHT JOIN keyword returns all the rows from the right table (table2), with the matching rows in the left table (table1). The result is NULL from the left side, when there is no match.
+
+
+FULL OUTER JOIN: The FULL OUTER JOIN keyword returns all records when there is a match in either left (table1) or right (table2) table records.
+
+
+CROSS JOIN: The CROSS JOIN keyword returns the Cartesian product of the two tables, which means it returns all possible combinations of rows from both tables.
+
+
+SELF JOIN: A self join is a regular join, but the table is joined with itself.
+
+
